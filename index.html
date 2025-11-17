@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shivam Joshi — Creative Portfolio</title>
+  <meta name="description" content="Creative portfolio of Shivam Joshi — AI & ML student and web developer." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #0f1724;
+      --bg2: #07102b;
+      --glass: rgba(255,255,255,0.04);
+      --accent: linear-gradient(135deg,#7c3aed,#06b6d4);
+      --accent-color: #7c3aed;
+      --muted: #9fb4d1;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial;color:#e7f0ff;background:radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.08), transparent), radial-gradient(900px 500px at 90% 90%, rgba(6,182,212,0.06), transparent), var(--bg1);}
+
+    .container{max-width:1100px;margin:28px auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;gap:18px}
+    .logo{width:78px;height:78px;border-radius:14px;background:linear-gradient(135deg,#06b6d4,#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;letter-spacing:0.6px;font-size:24px;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+    .hdr-right h1{margin:0;font-size:28px}
+    .hdr-right p{margin:6px 0 0;color:var(--muted)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:22px;margin-top:20px;align-items:center}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:20px;box-shadow:0 10px 40px rgba(2,6,23,0.6);backdrop-filter: blur(6px)}
+    .hero-left h2{margin:0 0 10px;font-size:22px}
+    .eyebrow{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(124,58,237,0.12);color:#d8cfff;font-weight:700;margin-bottom:12px}
+    .cta-row{margin-top:14px;display:flex;gap:12px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:var(--accent-color);color:white;font-weight:700;text-decoration:none;border:none;cursor:pointer}
+    .btn-light{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* Animated avatar */
+    .glass-avatar{width:420px;height:280px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .avatar-circle{width:120px;height:120px;border-radius:999px;background:linear-gradient(135deg,#7c3aed,#06b6d4);display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:44px;box-shadow:0 15px 40px rgba(124,58,237,0.18);transform:translateY(0);transition:transform .6s cubic-bezier(.2,.9,.2,1)}
+    .glass-avatar:hover .avatar-circle{transform:translateY(-8px)}
+    .floating-shape{position:absolute;width:220px;height:220px;border-radius:50%;filter:blur(40px);opacity:0.18;transform:translate(40%, -20%)}
+    .shape1{background:radial-gradient(circle at 30% 30%, #7c3aed, transparent)}
+    .shape2{background:radial-gradient(circle at 70% 70%, #06b6d4, transparent);transform:translate(-20%,40%);}
+
+    /* Skills & Projects */
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:22px;margin-top:20px}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .pill{padding:8px 12px;border-radius:999px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);font-weight:700}
+
+    .projects .project{display:flex;gap:12px;align-items:center;padding:14px;border-radius:12px;margin-bottom:12px;background:linear-gradient(90deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));}
+    .proj-thumb{width:84px;height:64px;border-radius:10px;background:linear-gradient(135deg,#07102b,#0b1220);display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:700}
+
+    /* Contact card */
+    .contact-card{position:sticky;top:24px}
+    .contact-list{list-style:none;padding:0;margin:0}
+    .contact-list li{padding:10px 0;border-bottom:1px dashed rgba(255,255,255,0.02);display:flex;align-items:center;gap:10px}
+
+    /* footer */
+    footer{text-align:center;margin-top:28px;color:var(--muted);font-size:13px}
+
+    /* small screens */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .glass-avatar{height:240px}
+    }
+
+    /* subtle entrance animations */
+    .reveal{opacity:0;transform:translateY(18px);transition:all .7s cubic-bezier(.2,.9,.2,1)}
+    .reveal.visible{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">SJ</div>
+      <div class="hdr-right">
+        <h1>Shivam Joshi</h1>
+        <p>AI & ML Student • Web Developer — PHP, C++, Python, HTML & CSS</p>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="card hero-left">
+        <span class="eyebrow">Creative Portfolio</span>
+        <h2>Hi, I'm <strong>Shivam</strong> — I build web apps and learn AI.</h2>
+        <p style="color:var(--muted)">I completed 12th from Modi School, Jamnagar and currently studying AI & ML. I enjoy building clean interfaces and backend systems — technology is my hobby.</p>
+
+        <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap">
+          <div class="skills">
+            <span class="pill">PHP</span>
+            <span class="pill">C++</span>
+            <span class="pill">Python</span>
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">AI & ML</span>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn" href="mailto:shivamjoshi1771@gmail.com">📧 Contact</a>
+          <a class="btn btn-light" href="#projects">🔎 View Projects</a>
+        </div>
+      </div>
+
+      <div class="card glass-avatar">
+        <div class="floating-shape shape1"></div>
+        <div class="floating-shape shape2"></div>
+        <div class="avatar-circle">SJ</div>
+        <p style="margin-top:12px;color:var(--muted)">AI & ML student • Web dev • Jamnagar</p>
+      </div>
+    </section>
+
+    <div class="grid">
+      <main>
+        <section id="projects" class="card projects">
+          <h2>Selected Projects</h2>
+
+          <div class="project reveal">
+            <div class="proj-thumb">Cloth</div>
+            <div>
+              <h3 style="margin:0">E-commerce Clothing Store</h3>
+              <p style="margin:6px 0 0;color:var(--muted)">Responsive frontend for an online clothing shop with product grid, filters and cart UI. Built using HTML, CSS and JavaScript.</p>
+            </div>
+          </div>
+
+          <div class="project reveal">
+            <div class="proj-thumb">Cake</div>
+            <div>
+              <h3 style="margin:0">Cake Shop Backend</h3>
+              <p style="margin:6px 0 0;color:var(--muted)">Backend system with product and order management, admin routes and APIs (PHP + MySQL).</p>
+            </div>
+          </div>
+
+          <div class="project reveal">
+            <div class="proj-thumb">MiniAI</div>
+            <div>
+              <h3 style="margin:0">AI Experiment</h3>
+              <p style="margin:6px 0 0;color:var(--muted)">Small ML prototypes for classification and data visualization — experimental projects while learning AI & ML.</p>
+            </div>
+          </div>
+
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <h2>About / Education</h2>
+          <p style="color:var(--muted)"><strong>12th Standard</strong> — Modi School, Jamnagar.<br>Currently pursuing college in <strong>AI & ML</strong>. I enjoy learning new technologies and building projects both frontend and backend.</p>
+        </section>
+
+      </main>
+
+      <aside>
+        <div class="card contact-card">
+          <h2>Contact</h2>
+          <ul class="contact-list">
+            <li><strong>Phone</strong><span style="margin-left:auto">+91 96645 25008</span></li>
+            <li><strong>Email</strong><span style="margin-left:auto"><a href="mailto:shivamjoshi1771@gmail.com">shivamjoshi1771@gmail.com</a></span></li>
+            <li><strong>Location</strong><span style="margin-left:auto">Jamnagar, India</span></li>
+          </ul>
+          <div style="margin-top:12px;text-align:center">
+            <a class="btn" href="tel:+919664525008">Call Me</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px;text-align:center">
+          <h3>Quick Links</h3>
+          <p style="color:var(--muted)">Add live links to GitHub, project demos or resume here.</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <p>Made by <strong>Shivam Joshi</strong> — © <span id="year"></span></p>
+    </footer>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // simple reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((ents)=>{
+      ents.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, {threshold:0.15});
+    reveals.forEach(r=>io.observe(r));
+  </script>
+</body>
+</html>
